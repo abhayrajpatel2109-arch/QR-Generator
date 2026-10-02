@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- QRCode.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="brand">
+                <i class="fa-solid fa-qrcode"></i>
+                <span>Universal QR Generator</span>
+            </div>
+            <button id="theme-toggle" title="Toggle Theme">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+        </header>
+
+        <!-- Main Card -->
+        <main class="qr-card">
+            <!-- Text / URL Input -->
+            <div class="input-group">
+                <label for="qr-text"><i class="fa-solid fa-link"></i> Enter Any Link or Text</label>
+                <textarea id="qr-text" rows="3" placeholder="Paste any long HTTP/HTTPS link, Instagram Reel, YouTube URL, or text here..."></textarea>
+            </div>
+
+            <!-- Styling Controls -->
+            <div class="controls-grid">
+                <div class="control-item">
+                    <label for="qr-size"><i class="fa-solid fa-expand"></i> Size (px)</label>
+                    <select id="qr-size">
+                        <option value="180">180 x 180</option>
+                        <option value="230" selected>230 x 230</option>
+                        <option value="280">280 x 280</option>
+                        <option value="350">350 x 350</option>
+                    </select>
+                </div>
+
+                <div class="control-item">
+                    <label for="color-dark"><i class="fa-solid fa-palette"></i> QR Color</label>
+                    <input type="color" id="color-dark" value="#000000">
+                </div>
+
+                <div class="control-item">
+                    <label for="color-light"><i class="fa-solid fa-fill-drip"></i> BG Color</label>
+                    <input type="color" id="color-light" value="#ffffff">
+                </div>
+            </div>
+
+            <!-- Generate Button -->
+            <button id="generate-btn" class="btn primary-btn">
+                <i class="fa-solid fa-bolt"></i> Generate QR Code
+            </button>
+
+            <!-- Output Container -->
+            <div class="qr-output-section">
+                <div id="qrcode-box" class="qrcode-box"></div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div id="action-buttons" class="action-buttons">
+                <button id="download-btn" class="btn success-btn">
+                    <i class="fa-solid fa-download"></i> Download PNG
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
